@@ -67,7 +67,7 @@ export const LoadingScreen = ({ onComplete }) => {
             <div className="flex items-center space-x-2">
               <span className="w-2.5 h-2.5 rounded-full bg-electric-blue animate-pulse" />
               <span className="font-display tracking-widest text-[10px] text-zinc-500 uppercase">
-                Dipesh Jangir &bull; Portfolio v2.0
+                Vansh Khandelwal &bull; Portfolio v2.0
               </span>
             </div>
             <div className="font-display tracking-widest text-[10px] text-zinc-500 uppercase">

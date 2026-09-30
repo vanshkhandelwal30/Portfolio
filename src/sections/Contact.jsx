@@ -11,8 +11,7 @@ export const Contact = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
-  // EmailJS credentials placeholders
-  // Users can create a .env file and write VITE_EMAILJS_SERVICE_ID, etc.
+  // EmailJS credentials placeholders from .env
   const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
   const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
   const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
@@ -22,7 +21,7 @@ export const Contact = () => {
     setLoading(true);
     setError(false);
 
-    // If the user hasn't configured EmailJS keys, trigger a mock success response so the UI stays fully testable
+    // Mock response if keys aren't configured yet
     if (SERVICE_ID === "YOUR_SERVICE_ID" || TEMPLATE_ID === "YOUR_TEMPLATE_ID" || PUBLIC_KEY === "YOUR_PUBLIC_KEY") {
       console.warn(
         "EmailJS: Service, Template, or Public Key is not configured. Simulating mock success response."
@@ -43,8 +42,8 @@ export const Contact = () => {
           setSuccess(true);
           formRef.current?.reset();
         },
-        (error) => {
-          console.error("EmailJS Error:", error.text);
+        (err) => {
+          console.error("EmailJS Error:", err.text);
           setLoading(false);
           setError(true);
         }
@@ -55,7 +54,7 @@ export const Contact = () => {
     <section id="contact" className="relative py-24 border-t border-zinc-900 bg-matte-black/25">
       <div className="max-w-7xl mx-auto px-6 md:px-12 z-10 relative">
         
-        {/* Title */}
+        {/* Section Header */}
         <div className="flex flex-col items-start mb-16 text-left">
           <span className="text-xs font-mono text-electric-blue uppercase tracking-widest font-semibold mb-2">
             09 / Communication
@@ -65,10 +64,10 @@ export const Contact = () => {
           </h2>
         </div>
 
-        {/* Form and info details */}
+        {/* Form and Details Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
           
-          {/* Left Column: Glass Details Cards */}
+          {/* Left Column: Contact Details Cards */}
           <div className="lg:col-span-5 flex flex-col justify-between gap-6 text-left">
             <div className="space-y-6">
               <h3 className="font-display font-bold text-xl md:text-2xl text-white">
@@ -79,8 +78,9 @@ export const Contact = () => {
               </p>
             </div>
 
-            {/* Communication Details list */}
+            {/* Contact Details List */}
             <div className="space-y-4 pt-4 border-t border-zinc-900/60">
+              
               {/* Email */}
               <div className="flex items-center space-x-4">
                 <div className="p-3 bg-zinc-900 border border-zinc-800 rounded-xl text-electric-blue flex-shrink-0">
@@ -88,8 +88,8 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-display font-bold text-[10px] text-zinc-500 uppercase tracking-widest font-mono">Email</h4>
-                  <a href="mailto:dipeshjangir12@gmail.com" className="text-sm md:text-md text-white hover:text-electric-blue transition-colors font-sans font-light">
-                    dipeshjangir12@gmail.com
+                  <a href="mailto:vanshkhandelwal30@gmail.com" className="text-sm md:text-md text-white hover:text-electric-blue transition-colors font-sans font-light">
+                    vanshkhandelwal30@gmail.com
                   </a>
                 </div>
               </div>
@@ -101,13 +101,13 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-display font-bold text-[10px] text-zinc-500 uppercase tracking-widest font-mono">Phone</h4>
-                  <a href="tel:+917742111581" className="text-sm md:text-md text-white hover:text-electric-blue transition-colors font-sans font-light">
-                    +91 7742111581
+                  <a href="tel:+918769050315" className="text-sm md:text-md text-white hover:text-electric-blue transition-colors font-sans font-light">
+                    +91 8769050315
                   </a>
                 </div>
               </div>
 
-              {/* Address */}
+              {/* Location */}
               <div className="flex items-center space-x-4">
                 <div className="p-3 bg-zinc-900 border border-zinc-800 rounded-xl text-electric-blue flex-shrink-0">
                   <MapPin className="w-5 h-5" />
@@ -123,21 +123,21 @@ export const Contact = () => {
 
             {/* Social Panel */}
             <div className="flex items-center gap-3 pt-6 border-t border-zinc-900/60">
-              <a href="https://github.com/dipeshjaengir" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/vanshkhandelwal30" target="_blank" rel="noopener noreferrer">
                 <MagneticButton range={15}>
                   <div className="p-3 bg-zinc-950 hover:bg-zinc-900 border border-zinc-850 rounded-xl text-zinc-400 hover:text-white hover:border-zinc-700 transition-all cursor-pointer">
                     <Github className="w-4.5 h-4.5" />
                   </div>
                 </MagneticButton>
               </a>
-              <a href="https://www.linkedin.com/in/dipesh-jangir-o7336" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/vansh-khandelwal30/" target="_blank" rel="noopener noreferrer">
                 <MagneticButton range={15}>
                   <div className="p-3 bg-zinc-950 hover:bg-zinc-900 border border-zinc-850 rounded-xl text-zinc-400 hover:text-white hover:border-zinc-700 transition-all cursor-pointer">
                     <Linkedin className="w-4.5 h-4.5" />
                   </div>
                 </MagneticButton>
               </a>
-              <a href="https://instagram.com/_dipesh2.0" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/vansh_khandelwal30/" target="_blank" rel="noopener noreferrer">
                 <MagneticButton range={15}>
                   <div className="p-3 bg-zinc-950 hover:bg-zinc-900 border border-zinc-850 rounded-xl text-zinc-400 hover:text-white hover:border-zinc-700 transition-all cursor-pointer">
                     <Instagram className="w-4.5 h-4.5" />
@@ -261,7 +261,7 @@ export const Contact = () => {
                       Message Sent Successfully!
                     </h3>
                     <p className="text-zinc-400 font-sans text-xs md:text-sm font-light max-w-sm">
-                      Thank you for reaching out, Dipesh has received your message and will respond shortly.
+                      Thank you for reaching out, Vansh has received your message and will respond shortly.
                     </p>
                     <button
                       onClick={() => setSuccess(false)}

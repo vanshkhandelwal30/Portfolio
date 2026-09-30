@@ -54,7 +54,7 @@ export const Hero = () => {
             <h1 className="font-display text-4xl md:text-7xl font-bold tracking-tight text-white leading-none">
               Hi, I'm <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-400 to-electric-blue">
-                Dipesh Jangir
+                Vansh Khandelwal
               </span>
             </h1>
             <p className="font-display text-lg md:text-2xl font-light text-zinc-400">
@@ -94,8 +94,9 @@ export const Hero = () => {
             </a>
 
             <a 
-              href="/Resume_Dipesh_Jangir.pdf" 
-              download="Resume_Dipesh_Jangir.pdf"
+              href="/Vansh_Khandelwal_Resume.pdf" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex-grow sm:flex-grow-0"
             >
               <MagneticButton range={25} className="w-full">
@@ -124,7 +125,7 @@ export const Hero = () => {
               {!imgLoadError ? (
                 <img
                   src={profileImg}
-                  alt="Dipesh Jangir Profile"
+                  alt="Vansh Khandelwal Profile"
                   onError={() => setImgLoadError(true)}
                   className="w-full h-full object-cover object-center rounded-xl group-hover:scale-105 transition-transform duration-700 ease-out"
                   loading="eager"
